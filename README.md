@@ -1,3 +1,50 @@
+## Meru Land Private Limited – Website
+
+This is a Next.js (React) marketing site for **Meru Land Private Limited**, styled with an Adobe Creative Cloud–inspired dark theme and yellow accent.
+
+Built with:
+- **Next.js 16** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS v4**
+
+### Local development
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run the dev server:
+
+```bash
+npm run dev
+```
+
+3. Open `http://localhost:3000` in your browser.
+
+The main landing page is implemented in `src/app/page.tsx`.
+
+### Deploying on Vercel
+
+This project is ready to deploy directly on **Vercel**.
+
+1. Push this project to a Git repository (GitHub, GitLab, or Bitbucket).
+2. Go to the Vercel dashboard and create a **New Project**.
+3. Import your repository.
+4. Vercel will auto-detect **Next.js** and use the default settings:
+   - Build command: `npm run build`
+   - Output directory: `.next`
+5. Click **Deploy**.
+
+After deployment, Vercel will give you a production URL for your Meru Land website.
+
+### Notes
+
+- The contact form currently only handles submission in the browser and shows a confirmation message. Connect it to your preferred backend, email service, or CRM when you are ready.
+- All styling is done using Tailwind CSS utility classes configured via `src/app/globals.css`.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
