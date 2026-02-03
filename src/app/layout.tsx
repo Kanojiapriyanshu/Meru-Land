@@ -13,9 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Meru Land Private Limited | Creative Land Solutions",
+  title: "Meru Land Pvt. Ltd. | Digital Marketing, Advertising & Media",
   description:
-    "Meru Land Private Limited blends creativity, technology, and strategy to design impactful digital and spatial experiences.",
+    "Meru Land Pvt. Ltd. is a digital marketing, advertising, media production and technology company, and the team behind CollabGlam.com – an influencer marketing platform.",
+  icons: {
+    icon: "/logo 2.jpg",
+  },
 };
 
 export default function RootLayout({

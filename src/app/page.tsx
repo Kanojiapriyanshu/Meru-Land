@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navItems = [
-  { href: "#collabglam", label: "collabGlam.com" },
+  { href: "#collabglam", label: "CollabGlam" },
   { href: "#services", label: "Services" },
   { href: "#workflows", label: "Workflows" },
   { href: "#about", label: "About" },
@@ -14,51 +14,57 @@ const navItems = [
 
 const appCards = [
   {
-    id: "collabglam",
-    name: "collabGlam",
-    tagline: "Collaboration OS",
-    description: "Workspace for glam & creative teams",
-    status: "Live",
+    id: "influencer-campaigns",
+    name: "Influencer Campaign Management",
+    tagline: "Creators, content & coordination",
+    description:
+      "End-to-end management of influencer campaigns, from creator selection and briefing to approvals and reporting.",
+    status: "Core service",
     featured: true,
     url: "https://collabglam.com",
   },
   {
-    id: "brand-design",
-    name: "Brand Design",
-    tagline: "Visual Identity",
-    description: "Cohesive brand systems & experiences",
+    id: "performance-ads",
+    name: "Performance Advertising (Google/Meta Ads)",
+    tagline: "Search, social & display",
+    description:
+      "Performance-focused media planning and optimization across Google and Meta to drive measurable business outcomes.",
     status: "Available",
     featured: false,
   },
   {
-    id: "land-experience",
-    name: "Land Experience",
-    tagline: "Spatial Storytelling",
-    description: "Site narratives & concept mapping",
+    id: "social-media",
+    name: "Social Media Growth & Strategy",
+    tagline: "Always-on brand presence",
+    description:
+      "Strategic content calendars, channel planning, and community building across key social platforms.",
     status: "Available",
     featured: false,
   },
   {
-    id: "digital-products",
-    name: "Digital Products",
-    tagline: "Interface Design",
-    description: "Websites, dashboards & apps",
+    id: "video-production",
+    name: "Video Production & Creative Studio",
+    tagline: "Stories in motion",
+    description:
+      "Concept-to-delivery video production for campaigns, brand stories, product explainers, and social-first formats.",
     status: "Available",
     featured: false,
   },
   {
-    id: "creative-tech",
-    name: "Creative Technology",
-    tagline: "Interactive Experiences",
-    description: "Prototypes & immersive builds",
+    id: "branding-design",
+    name: "Branding & Design Solutions",
+    tagline: "Identity, systems & visual language",
+    description:
+      "Brand identity, visual systems, and marketing design assets aligned to your growth and campaign goals.",
     status: "Available",
     featured: false,
   },
   {
-    id: "strategy",
-    name: "Strategy & Consulting",
-    tagline: "Roadmap Design",
-    description: "Goals, metrics & creative outcomes",
+    id: "automation-analytics",
+    name: "Marketing Automation & Analytics",
+    tagline: "Data, journeys & insight",
+    description:
+      "CRM journeys, marketing automation, dashboards, and analytics to keep performance transparent and actionable.",
     status: "Available",
     featured: false,
   },
@@ -69,21 +75,24 @@ const workflows = [
     step: "01",
     title: "Discover",
     duration: "1–2 weeks",
-    description: "Map land, brand, and digital landscape—goals, constraints, audiences, and existing assets.",
+    description:
+      "Understand brand goals, target audience, existing channels, and campaign direction.",
     icon: "🔍",
   },
   {
     step: "02",
-    title: "Design",
+    title: "Create",
     duration: "2–3 weeks",
-    description: "Explore creative directions, design key experiences, and share interactive previews for feedback.",
+    description:
+      "Design content, creatives, influencer briefs, and a clear strategy roadmap for execution.",
     icon: "🎨",
   },
   {
     step: "03",
-    title: "Build & Launch",
+    title: "Launch & Scale",
     duration: "Go-live",
-    description: "Bring everything to life in production-ready assets, digital experiences, and launch collateral.",
+    description:
+      "Execute campaigns across digital channels, measure performance, and scale what works.",
     icon: "🚀",
   },
 ];
@@ -102,18 +111,18 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link href="#top" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white shadow-lg overflow-hidden">
+            <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-white shadow-lg">
               <Image
                 src="/logo 2.jpg"
                 alt="Meru Land logo"
                 width={50}
                 height={50}
-                className="h-14 w-14 object-cover"
+                className="h-18 w-14 object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-gray-900">Meru Land</span>
+              <span className="text-lg font-bold text-gray-900">MERU LAND</span>
               <span className="text-xs text-gray-500">Private Limited</span>
             </div>
           </Link>
@@ -147,19 +156,19 @@ export default function Home() {
               <div>
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-yellow-100 px-4 py-1.5 text-xs font-semibold text-yellow-800">
                   <span className="h-2 w-2 rounded-full bg-yellow-500" />
-                  Creative cloud–inspired studio & SaaS
+                  Digital marketing, advertising & media
                 </div>
                 <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-                  Designing{" "}
+                  Driving Digital Growth Through{" "}
                   <span className="bg-gradient-to-r from-yellow-500 to-amber-500 bg-clip-text text-transparent">
-                    land, brand & digital
+                    Marketing & Advertising
                   </span>{" "}
-                  experiences that stand out.
+                  Excellence.
                 </h1>
                 <p className="mb-8 text-lg text-gray-600">
-                  Meru Land Private Limited blends strategy, design, and technology to craft
-                  immersive experiences—across land development, digital products, and visual
-                  identity—so your brand feels as seamless as a creative cloud workspace.
+                  Meru Land Pvt. Ltd. is a full-service digital marketing and advertising company
+                  helping brands scale through creative strategy, performance campaigns, and
+                  influencer-powered storytelling.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a
@@ -178,15 +187,12 @@ export default function Home() {
               </div>
               <div className="relative">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-100 to-amber-100 shadow-2xl">
-                  {/* Placeholder for hero image - replace with actual image */}
-                  <div className="flex h-full items-center justify-center bg-gradient-to-br from-yellow-200/50 to-amber-200/50">
-                    <div className="text-center">
-                      <div className="mb-4 text-6xl">🏢</div>
-                      <p className="text-sm font-medium text-gray-600">
-                        Professional workspace image
-                      </p>
-                    </div>
-                  </div>
+                  <img
+                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=80"
+                    alt="Marketing and creative team collaborating in a modern workspace"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </div>
@@ -199,15 +205,14 @@ export default function Home() {
             <div className="mb-12 text-center">
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-yellow-100 px-4 py-1.5 text-xs font-semibold text-yellow-800">
                 <span className="h-2 w-2 rounded-full bg-yellow-500" />
-                Featured SaaS Product
+                Influencer Marketing Platform
               </div>
               <h2 className="mb-4 text-4xl font-bold text-gray-900">
-                <span className="text-yellow-500">collab</span>
-                <span className="text-gray-900">Glam.com</span>
+                CollabGlam — Influencer Marketing Platform
               </h2>
               <p className="mx-auto max-w-2xl text-lg text-gray-600">
-                Our flagship SaaS platform that keeps photographers, stylists, makeup artists,
-                and brand teams in one synchronized workspace.
+                CollabGlam connects brands with the right creators, making influencer marketing
+                simple, measurable, and scalable.
               </p>
             </div>
 
@@ -220,10 +225,11 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">
-                        Real-time collaboration
+                        Creator matching & discovery
                       </h3>
                       <p className="text-gray-600">
-                        Across shoots, campaigns, and launches in one synchronized workspace.
+                        Shortlist creators by audience, category, and performance signals that match
+                        your brand.
                       </p>
                     </div>
                   </div>
@@ -233,10 +239,11 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">
-                        Centralized briefs & references
+                        Campaign workflows & approvals
                       </h3>
                       <p className="text-gray-600">
-                        All glam guidelines, moodboards, and assets in one place.
+                        Keep briefs, timelines, and approvals in one place across brands, creators,
+                        and teams.
                       </p>
                     </div>
                   </div>
@@ -246,10 +253,10 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">
-                        Streamlined approvals
+                        Performance tracking & reporting
                       </h3>
                       <p className="text-gray-600">
-                        Comments, status updates, and approvals all in one timeline.
+                        Measure creator performance, campaign ROI, and learnings across channels.
                       </p>
                     </div>
                   </div>
@@ -261,21 +268,21 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-lg bg-yellow-400 px-6 py-3 text-sm font-semibold text-gray-900 shadow-lg transition hover:bg-yellow-500"
                   >
-                    Visit collabGlam.com
+                    Visit CollabGlam.com
                     <span>→</span>
                   </a>
                 </div>
               </div>
               <div className="relative">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-50 to-amber-50 shadow-xl">
-                  {/* Placeholder for collabGlam dashboard image */}
-                  <div className="flex h-full items-center justify-center bg-gradient-to-br from-yellow-100/50 to-amber-100/50">
-                    <div className="text-center">
-                      <div className="mb-4 text-6xl">💼</div>
-                      <p className="text-sm font-medium text-gray-600">
-                        collabGlam dashboard preview
-                      </p>
-                    </div>
+                <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-50 to-amber-50 shadow-xl">
+                  <div className="flex h-32 w-32 items-center justify-center rounded-2xl bg-yellow-400 shadow-md">
+                    <Image
+                      src="/collab.jpg"
+                      alt="CollabGalm logo"
+                      width={130}
+                      height={132}
+                      className="h-40 w-40 object-contain"
+                    />
                   </div>
                 </div>
               </div>
@@ -332,7 +339,7 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="rounded-lg bg-yellow-400 px-4 py-2 text-xs font-semibold text-gray-900 transition hover:bg-yellow-500"
                       >
-                        Open app
+                        Visit
                       </a>
                     ) : (
                       <a
@@ -360,19 +367,41 @@ export default function Home() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-3">
-              {[1, 2, 3].map((item) => (
+              {[
+                {
+                  id: 1,
+                  src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
+                  alt: "Creative marketing team in a strategy workshop",
+                  label: "Campaign strategy & planning",
+                },
+                {
+                  id: 2,
+                  src: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+                  alt: "Team collaborating around a table with laptops and notes",
+                  label: "Content, media & performance reviews",
+                },
+                {
+                  id: 3,
+                  src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80",
+                  alt: "Video production and media equipment in a studio",
+                  label: "Video production & creative studio",
+                },
+              ].map((item) => (
                 <div
-                  key={item}
+                  key={item.id}
                   className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-100 to-amber-100 shadow-lg transition hover:shadow-xl"
                 >
-                  {/* Placeholder for portfolio images */}
-                  <div className="flex h-full items-center justify-center bg-gradient-to-br from-yellow-200/50 to-amber-200/50">
-                    <div className="text-center">
-                      <div className="mb-2 text-5xl">📸</div>
-                      <p className="text-sm font-medium text-gray-600">
-                        Portfolio image {item}
-                      </p>
-                    </div>
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-80" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4">
+                    <p className="text-sm font-medium text-white drop-shadow">
+                      {item.label}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -392,12 +421,13 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                "Creative cloud-style dashboards",
-                "Spatial & land experience mapping",
-                "Data-driven storytelling",
-                "Brand ecosystems",
-                "Design systems",
-                "Interactive presentations",
+                "Influencer Marketing Platforms",
+                "Performance Growth Campaigns",
+                "Creative Advertising Production",
+                "Brand Strategy & Positioning",
+                "Video & Animation Studio",
+                "Data-Driven Marketing Execution",
+                "Technology & Product Engineering",
               ].map((pill) => (
                 <span
                   key={pill}
@@ -462,19 +492,18 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-2">
               <div>
                 <h2 className="mb-6 text-3xl font-bold text-gray-900">
-                  About Meru Land Private Limited
+                  About Meru Land Pvt. Ltd.
                 </h2>
                 <div className="space-y-4 text-gray-600">
                   <p>
-                    We are a design-forward studio with roots in land development, branding,
-                    and digital product design. Our work sits at the intersection of strategy
-                    and aesthetics—where a strong story is supported by equally strong
-                    interfaces, visuals, and experiences.
+                    Meru Land Pvt. Ltd. is a modern digital marketing and advertising agency
+                    delivering end-to-end growth solutions through creative production, influencer
+                    collaborations, and performance-driven campaigns.
                   </p>
                   <p>
-                    Whether you&apos;re shaping a new site, evolving a brand, or building
-                    creative tools for teams, we design systems that feel as intuitive as a
-                    well-organized creative cloud library.
+                    From strategy and storytelling to media, influencers, and analytics, we help
+                    brands orchestrate campaigns that feel consistent, measurable, and built for
+                    long-term growth.
                   </p>
                 </div>
 
@@ -578,12 +607,12 @@ export default function Home() {
                   <p className="text-xs text-gray-500">
                     Prefer email? Reach us at{" "}
                     <a
-                      href="mailto:hello@meruland.studio"
+                      href="mailto:info@meruland.com"
                       className="font-medium text-yellow-600 underline"
                     >
-                      hello@meruland.studio
-                    </a>{" "}
-                    (placeholder).
+                      info@meruland.com
+                    </a>
+                    .
                   </p>
                 </form>
               </div>
@@ -596,11 +625,50 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <p className="text-sm text-gray-600">
-                © {new Date().getFullYear()} Meru Land Private Limited. All rights reserved.
+                © {new Date().getFullYear()} Meru Land Pvt. Ltd. All rights reserved.{" "}
+                Radha Rani Palace, 1st Floor, Parikrama Marg, Vrindavan 281121, Uttar Pradesh,
+                India. Email: info@meruland.com · Backed by in-house IT, development & AI
+                engineering teams.
               </p>
-              <span className="text-sm text-gray-500">
-                Crafted with a creative cloud–inspired workflow.
-              </span>
+              <div className="flex items-center gap-4 text-sm text-gray-500">
+                <span>
+                  Digital marketing, advertising & media production studio behind CollabGalm.com.
+                </span>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.linkedin.com/company/meru-land-pvt-ltd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-gray-500 transition hover:text-yellow-600"
+                    aria-label="Meru Land on LinkedIn"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4 fill-current"
+                    >
+                      <path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.08 1 2.5 1s2.48 1.12 2.48 2.5zM.32 8.16H4.7V24H.32V8.16zM8.34 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.11-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.38v-7.71c0-1.84-.03-4.21-2.57-4.21-2.57 0-2.96 2.01-2.96 4.08V24H8.34V8.16z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/merulandpvt.ltd?igsh=OXAyMzdoZXlmejE="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-gray-500 transition hover:text-yellow-600"
+                    aria-label="Meru Land on Instagram"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4 fill-current"
+                    >
+                      <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.4.61.24 1.04.53 1.49.98.45.45.74.88.98 1.49.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.584-.07 4.85c-.05 1.17-.24 1.97-.4 2.43-.24.61-.53 1.04-.98 1.49-.45.45-.88.74-1.49.98-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.584-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4-.61-.24-1.04-.53-1.49-.98-.45-.45-.74-.88-.98-1.49-.16-.46-.35-1.26-.4-2.43C2.21 15.584 2.2 15.2 2.2 12s.01-3.584.07-4.85c.05-1.17.24-1.97.4-2.43.24-.61.53-1.04.98-1.49.45-.45.88-.74 1.49-.98.46-.16 1.26-.35 2.43-.4C8.416 2.21 8.8 2.2 12 2.2m0-2.2C8.735 0 8.332.014 7.052.072 5.773.13 4.78.33 3.96.64 3.11.96 2.39 1.39 1.68 2.1.97 2.81.54 3.53.22 4.38.01 5.2-.13 6.19.07 7.47.13 8.75.14 9.15.14 12s-.01 3.25-.07 4.53c-.2 1.28-.06 2.27.15 3.09.32.85.75 1.57 1.46 2.28.71.71 1.43 1.14 2.28 1.46.82.21 1.81.35 3.09.15C8.75 23.87 9.15 23.86 12 23.86s3.25.01 4.53.07c1.28.2 2.27.06 3.09-.15.85-.32 1.57-.75 2.28-1.46.71-.71 1.14-1.43 1.46-2.28.21-.82.35-1.81.15-3.09C23.87 15.25 23.86 14.85 23.86 12s.01-3.25.07-4.53c.2-1.28.06-2.27-.15-3.09-.32-.85-.75-1.57-1.46-2.28C21.61.97 20.89.54 20.04.22 19.22.01 18.23-.13 16.95.07 15.67.13 15.27.14 12 .14z" />
+                      <path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.17 6.17 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z" />
+                      <circle cx="18.4" cy="5.6" r="1.44" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </footer>
