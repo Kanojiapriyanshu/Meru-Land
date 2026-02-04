@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -99,11 +99,42 @@ const workflows = [
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+  const [showTop, setShowTop] = useState(false);
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     setSubmitted(true);
   };
+
+  const handleNewsletterSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    setNewsletterSubmitted(true);
+    setNewsletterEmail("");
+  };
+
+  const handleBackToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("info@meruland.com");
+    } catch (err) {
+      // ignore copy failures
+    }
+  };
+
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 240);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -621,32 +652,54 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-gray-200 bg-white py-8">
+        <footer className="border-t border-gray-200 bg-white py-12">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <p className="text-sm text-gray-600">
-                © {new Date().getFullYear()} Meru Land Pvt. Ltd. All rights reserved.{" "}
-                Radha Rani Palace, 1st Floor, Parikrama Marg, Vrindavan 281121, Uttar Pradesh,
-                India. Email: info@meruland.com · Backed by in-house IT, development & AI
-                engineering teams.
-              </p>
-              <div className="flex items-center gap-4 text-sm text-gray-500">
-                <span>
-                  Digital marketing, advertising & media production studio behind CollabGalm.com.
-                </span>
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="space-y-3">
+                <h4 className="text-sm font-semibold text-gray-900">Meru Land Pvt. Ltd.</h4>
+                <p className="text-sm text-gray-600">
+                  Radha Rani Palace, 1st Floor, Parikrama Marg,
+                  <br /> Vrindavan 281121, Uttar Pradesh, India
+                </p>
                 <div className="flex items-center gap-3">
+                  <a
+                    href="mailto:info@meruland.com"
+                    className="text-sm font-medium text-yellow-600 hover:underline"
+                    aria-label="Email Meru Land"
+                  >
+                    info@meruland.com
+                  </a>
+                  <button
+                    type="button"
+                    onClick={handleCopyEmail}
+                    className="text-sm text-gray-500 hover:text-gray-700"
+                    aria-label="Copy email to clipboard"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <p className="text-xs text-gray-500">© {new Date().getFullYear()} Meru Land. All rights reserved.</p>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                <h4 className="text-sm font-semibold text-gray-900">Quick links</h4>
+                <nav className="flex flex-wrap gap-2 text-sm">
+                  <a href="#services" className="text-gray-600 hover:text-yellow-600">Services</a>
+                  <a href="#workflows" className="text-gray-600 hover:text-yellow-600">Workflow</a>
+                  <a href="#about" className="text-gray-600 hover:text-yellow-600">About</a>
+                  <a href="#contact" className="text-gray-600 hover:text-yellow-600">Contact</a>
+                  <a href="https://collabglam.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-yellow-600">CollabGlam</a>
+                </nav>
+
+                <div className="mt-3 flex items-center gap-3">
                   <a
                     href="https://www.linkedin.com/company/meru-land-pvt-ltd/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-gray-500 transition hover:text-yellow-600"
+                    className="p-2 rounded-md text-gray-500 hover:text-yellow-600 hover:bg-gray-50"
                     aria-label="Meru Land on LinkedIn"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      className="h-4 w-4 fill-current"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-current">
                       <path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.08 1 2.5 1s2.48 1.12 2.48 2.5zM.32 8.16H4.7V24H.32V8.16zM8.34 8.16h4.18v2.15h.06c.58-1.1 2-2.26 4.11-2.26 4.4 0 5.21 2.9 5.21 6.67V24h-4.38v-7.71c0-1.84-.03-4.21-2.57-4.21-2.57 0-2.96 2.01-2.96 4.08V24H8.34V8.16z" />
                     </svg>
                   </a>
@@ -654,14 +707,10 @@ export default function Home() {
                     href="https://www.instagram.com/merulandpvt.ltd?igsh=OXAyMzdoZXlmejE="
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-gray-500 transition hover:text-yellow-600"
+                    className="p-2 rounded-md text-gray-500 hover:text-yellow-600 hover:bg-gray-50"
                     aria-label="Meru Land on Instagram"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      className="h-4 w-4 fill-current"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-current">
                       <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.4.61.24 1.04.53 1.49.98.45.45.74.88.98 1.49.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.584-.07 4.85c-.05 1.17-.24 1.97-.4 2.43-.24.61-.53 1.04-.98 1.49-.45.45-.88.74-1.49.98-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.584-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4-.61-.24-1.04-.53-1.49-.98-.45-.45-.74-.88-.98-1.49-.16-.46-.35-1.26-.4-2.43C2.21 15.584 2.2 15.2 2.2 12s.01-3.584.07-4.85c.05-1.17.24-1.97.4-2.43.24-.61.53-1.04.98-1.49.45-.45.88-.74 1.49-.98.46-.16 1.26-.35 2.43-.4C8.416 2.21 8.8 2.2 12 2.2m0-2.2C8.735 0 8.332.014 7.052.072 5.773.13 4.78.33 3.96.64 3.11.96 2.39 1.39 1.68 2.1.97 2.81.54 3.53.22 4.38.01 5.2-.13 6.19.07 7.47.13 8.75.14 9.15.14 12s-.01 3.25-.07 4.53c-.2 1.28-.06 2.27.15 3.09.32.85.75 1.57 1.46 2.28.71.71 1.43 1.14 2.28 1.46.82.21 1.81.35 3.09.15C8.75 23.87 9.15 23.86 12 23.86s3.25.01 4.53.07c1.28.2 2.27.06 3.09-.15.85-.32 1.57-.75 2.28-1.46.71-.71 1.14-1.43 1.46-2.28.21-.82.35-1.81.15-3.09C23.87 15.25 23.86 14.85 23.86 12s.01-3.25.07-4.53c.2-1.28.06-2.27-.15-3.09-.32-.85-.75-1.57-1.46-2.28C21.61.97 20.89.54 20.04.22 19.22.01 18.23-.13 16.95.07 15.67.13 15.27.14 12 .14z" />
                       <path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.17 6.17 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z" />
                       <circle cx="18.4" cy="5.6" r="1.44" />
@@ -669,8 +718,47 @@ export default function Home() {
                   </a>
                 </div>
               </div>
+
+              <div className="space-y-3">
+                <h4 className="text-sm font-semibold text-gray-900">Stay in the loop</h4>
+                <p className="text-sm text-gray-600">Subscribe for occasional updates about work and services.</p>
+
+                <form onSubmit={handleNewsletterSubmit} className="mt-2 flex gap-2">
+                  <label htmlFor="newsletter" className="sr-only">Email</label>
+                  <input
+                    id="newsletter"
+                    type="email"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20"
+                  />
+                  <button
+                    type="submit"
+                    className="rounded-lg bg-yellow-400 px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-yellow-500"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+
+                {newsletterSubmitted && (
+                  <p className="mt-2 text-sm text-green-600">Thanks — you're subscribed (demo).</p>
+                )}
+              </div>
             </div>
           </div>
+
+          {showTop && (
+            <button
+              onClick={handleBackToTop}
+              aria-label="Back to top"
+              className="fixed bottom-6 right-6 z-50 rounded-full bg-yellow-400 p-3 shadow-lg transition hover:bg-yellow-500"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-5 w-5 fill-current text-gray-900">
+                <path d="M12 5l-7 7h4v7h6v-7h4z" />
+              </svg>
+            </button>
+          )}
         </footer>
       </main>
     </div>
