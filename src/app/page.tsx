@@ -526,17 +526,28 @@ export default function Home() {
                   About Meru Land Pvt. Ltd.
                 </h2>
                 <div className="space-y-4 text-gray-600">
-                  <p>
-                    Meru Land Pvt. Ltd. is a modern digital marketing and advertising agency
-                    delivering end-to-end growth solutions through creative production, influencer
-                    collaborations, and performance-driven campaigns.
-                  </p>
-                  <p>
-                    From strategy and storytelling to media, influencers, and analytics, we help
-                    brands orchestrate campaigns that feel consistent, measurable, and built for
-                    long-term growth.
-                  </p>
-                </div>
+  <p>
+    Meru Land Pvt. Ltd. is a modern digital marketing and advertising company
+    delivering end-to-end growth solutions through creative production,
+    influencer collaborations, and performance-driven campaigns.
+  </p>
+
+  <p>
+    We operate through specialized ventures under our company, including
+    <span className="font-semibold text-gray-800">
+      {" "}Enoylity Media Creations
+    </span>
+    — our dedicated creative and media production division focused on branding,
+    video content, and digital storytelling.
+  </p>
+
+  <p>
+    Together, Meru Land and its ventures help brands execute impactful
+    marketing strategies that are consistent, measurable, and built for
+    long-term growth.
+  </p>
+</div>
+
 
                 <div className="mt-8 space-y-3">
                   <div className="flex items-center gap-3">
